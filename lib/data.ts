@@ -1,4 +1,4 @@
-import { Plot, Block, PlotStatus } from './types'
+import { Plot, Block, PlotStatus, Buyer, Installment } from './types'
 
 export const SCHEME = {
   name: 'Lyallpur Smart City',
@@ -24,7 +24,7 @@ export const BLOCKS: Block[] = [
   { id: 'commercial', name: 'Commercial Block', description: 'Commercial plots for businesses and investment', totalPlots: 24, plotType: '4-Marla-C' },
 ]
 
-export const BUYERS = [
+export const BUYERS: Buyer[] = [
   { id: 'B001', name: 'Ahmed Raza Khan',     cnic: '33100-1234567-1', phone: '+92 300 1234567', city: 'Faisalabad', type: 'local' },
   { id: 'B002', name: 'Fatima Malik',         cnic: '33100-2345678-2', phone: '+92 321 2345678', city: 'Faisalabad', type: 'local' },
   { id: 'B003', name: 'Muhammad Usman Tariq', cnic: '33100-3456789-3', phone: '+92 311 3456789', city: 'Dubai, UAE',  type: 'overseas' },
@@ -39,7 +39,7 @@ export const BUYERS = [
   { id: 'B012', name: 'Tariq Mahmood',        cnic: '33100-2233445-2', phone: '+92 321 2233445', city: 'Faisalabad', type: 'local' },
 ]
 
-export const INSTALLMENTS = [
+export const INSTALLMENTS: Installment[] = [
   { id: 'INS001', buyerId: 'B001', plotRef: 'OVS-012', block: 'Overseas Block', plotType: '10-Marla', totalAmount: 8500000, downPayment: 2125000, monthlyAmount: 175694, dueDate: '2024-05-10', paidDate: null, status: 'overdue', reminderSent: false, installmentNo: 4, totalInstallments: 36 },
   { id: 'INS002', buyerId: 'B002', plotRef: 'GEN-034', block: 'General Block', plotType: '5-Marla', totalAmount: 4250000, downPayment: 1062500, monthlyAmount: 87847, dueDate: '2024-05-28', paidDate: null, status: 'overdue', reminderSent: true, installmentNo: 2, totalInstallments: 36 },
   { id: 'INS003', buyerId: 'B003', plotRef: 'OVS-007', block: 'Overseas Block', plotType: '10-Marla', totalAmount: 8500000, downPayment: 2125000, monthlyAmount: 175694, dueDate: '2024-05-15', paidDate: null, status: 'overdue', reminderSent: false, installmentNo: 3, totalInstallments: 36 },
