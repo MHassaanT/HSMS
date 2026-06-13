@@ -26,7 +26,7 @@ export default function InstallmentsTable() {
   const filteredInstallments = installments.filter(inst => inst.status === activeTab)
 
   const handleSendReminderClick = (inst: Installment) => {
-    const buyer = BUYERS.find(b => b.id === inst.buyerId) || null
+    const buyer: Buyer | null = BUYERS.find(b => b.id === inst.buyerId) ?? null
     setSelectedInst(inst)
     setSelectedBuyer(buyer)
     setModalOpen(true)

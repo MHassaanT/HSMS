@@ -1,6 +1,10 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Sidebar from './Sidebar'
 import TopBar from './TopBar'
+import { isAuthenticated } from '@/lib/auth'
 
 interface AppShellProps {
   children: React.ReactNode
@@ -8,6 +12,18 @@ interface AppShellProps {
 }
 
 export default function AppShell({ children, currentPage }: AppShellProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!isAuthenticated()) {
+      router.replace('/login')
+    }
+  }, [router])
+
+  if (!isAuthenticated()) {
+    return null // Avoid flash of content while redirecting
+  }
+
   return (
     <div className="flex h-screen overflow-hidden bg-ds-bg">
       <Sidebar />

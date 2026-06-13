@@ -1,8 +1,17 @@
 "use client"
 
-import { Bell, HelpCircle, Search } from 'lucide-react'
+import { Bell, HelpCircle, Search, LogOut } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { logout } from '@/lib/auth'
 
 export default function TopBar({ title }: { title: string }) {
+  const router = useRouter()
+
+  const handleLogout = () => {
+    logout()
+    router.replace('/login')
+  }
+
   return (
     <header className="h-[64px] bg-ds-surface border-b border-[#E2E8F0] px-6 flex items-center justify-between shrink-0">
       {/* LEFT */}
@@ -46,6 +55,15 @@ export default function TopBar({ title }: { title: string }) {
             <span className="text-[11px] text-ds-on-surface-variant">Chairman</span>
           </div>
         </div>
+
+        {/* Logout */}
+        <button
+          onClick={handleLogout}
+          title="Sign Out"
+          className="ml-1 p-1.5 rounded hover:bg-ds-surface-container transition-colors text-ds-on-surface-variant hover:text-ds-error"
+        >
+          <LogOut className="w-4 h-4" />
+        </button>
       </div>
     </header>
   )
