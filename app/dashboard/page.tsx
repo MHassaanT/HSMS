@@ -8,7 +8,8 @@ import { TrendingUp, Wallet, AlertTriangle, MapPin } from 'lucide-react'
 export default function DashboardPage() {
   return (
     <AppShell currentPage="Dashboard">
-      <div className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6 max-w-[1440px] mx-auto w-full">
+      <div className="h-full overflow-y-auto">
+        <div className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6 max-w-[1440px] mx-auto w-full">
         {/* Section A — KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <KpiCard
@@ -60,6 +61,7 @@ export default function DashboardPage() {
 
         {/* Section C — Recent Bookings Table */}
         <RecentBookingsTable />
+        </div>
       </div>
     </AppShell>
   )

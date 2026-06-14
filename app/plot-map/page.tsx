@@ -17,10 +17,10 @@ export default function PlotMapPage() {
 
   return (
     <AppShell currentPage="Plot Map">
-      <div className="h-full flex relative overflow-hidden">
+      <div className="h-full min-h-0 flex relative overflow-hidden">
         
         {/* Main Content Area */}
-        <div className="flex-1 flex flex-col min-w-0 overflow-y-auto bg-ds-bg">
+        <div className="flex-1 flex flex-col min-w-0 min-h-0 overflow-y-auto bg-ds-bg">
           
           {/* Top Controls Bar */}
           <div className="sticky top-0 bg-ds-surface border-b border-[#E2E8F0] px-4 sm:px-6 py-3 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between z-10">

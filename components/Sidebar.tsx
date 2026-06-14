@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Building2, LayoutDashboard, Map, CreditCard, Users, BarChart3, Settings, LogOut, X } from 'lucide-react'
+import { Building2, LayoutDashboard, Map, CreditCard, LogOut, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface SidebarProps {
@@ -18,9 +18,6 @@ export default function Sidebar({ isOpen = true, onNavigate, onClose }: SidebarP
     { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     { name: 'Plot Map', href: '/plot-map', icon: Map },
     { name: 'Installments', href: '/installments', icon: CreditCard },
-    { name: 'Agents', href: '/agents', icon: Users },
-    { name: 'Reports', href: '/reports', icon: BarChart3 },
-    { name: 'Settings', href: '/settings', icon: Settings },
   ]
 
   return (
