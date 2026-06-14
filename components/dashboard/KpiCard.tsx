@@ -40,7 +40,7 @@ export default function KpiCard({
       </div>
 
       {/* Row 2 */}
-      <div className="text-[32px] font-semibold leading-[40px] tracking-[-0.01em]">
+      <div className="text-[28px] sm:text-[32px] font-semibold leading-[36px] sm:leading-[40px]">
         {value}
       </div>
 

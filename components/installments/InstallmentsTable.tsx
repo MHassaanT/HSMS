@@ -48,14 +48,14 @@ export default function InstallmentsTable() {
   return (
     <div className="flex flex-col gap-4">
       {/* Tabs + Controls */}
-      <div className="flex items-center justify-between">
-        <div className="flex border-b border-ds-outline-variant/30">
+      <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+        <div className="flex overflow-x-auto border-b border-ds-outline-variant/30">
           {(['overdue', 'upcoming', 'paid'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={cn(
-                "px-4 py-2 text-[14px] capitalize transition-colors",
+                "shrink-0 px-4 py-2 text-[14px] capitalize transition-colors",
                 activeTab === tab 
                   ? "text-ds-secondary border-b-2 border-ds-secondary font-medium" 
                   : "text-ds-on-surface-variant hover:text-ds-on-surface"
@@ -65,10 +65,10 @@ export default function InstallmentsTable() {
             </button>
           ))}
         </div>
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 xl:justify-end">
+          <div className="flex min-w-0 items-center gap-2">
             <span className="text-[11px] font-medium uppercase tracking-[0.05em] text-ds-on-surface-variant">SORT BY</span>
-            <select className="border border-ds-outline-variant rounded px-2 h-9 text-[13px] bg-white text-ds-on-surface focus:outline-none focus:border-ds-secondary">
+            <select className="min-w-0 flex-1 sm:flex-none border border-ds-outline-variant rounded px-2 h-9 text-[13px] bg-white text-ds-on-surface focus:outline-none focus:border-ds-secondary">
               <option>Due Date (Soonest)</option>
             </select>
           </div>
@@ -84,7 +84,7 @@ export default function InstallmentsTable() {
       {/* Table Card */}
       <div className="bg-ds-surface rounded-lg border border-[#E2E8F0] shadow-card overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left whitespace-nowrap">
+          <table className="min-w-[760px] w-full text-left whitespace-nowrap">
             <thead className="bg-ds-primary-dim">
               <tr>
                 <th className="text-[11px] font-medium uppercase tracking-[0.05em] text-white px-4 py-3">Buyer Name</th>
@@ -191,7 +191,7 @@ export default function InstallmentsTable() {
         
         {/* Pagination Footer */}
         {filteredInstallments.length > 0 && (
-          <div className="p-4 border-t border-[#F1F5F9] flex justify-between items-center text-[13px] text-ds-on-surface-variant">
+          <div className="p-4 border-t border-[#F1F5F9] flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-[13px] text-ds-on-surface-variant">
             <span>Showing 1 to {filteredInstallments.length} of {filteredInstallments.length} {activeTab} Installments</span>
             <div className="flex items-center gap-1">
               <button className="w-8 h-8 flex items-center justify-center rounded hover:bg-ds-surface-low">{'<'}</button>

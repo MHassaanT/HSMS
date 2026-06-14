@@ -15,7 +15,7 @@ export default function PlotDetailPanel({ plot, isOpen, onClose }: PlotDetailPan
     return (
       <div 
         className={cn(
-          "fixed right-0 top-0 h-full w-[360px] bg-ds-surface border-l border-[#E2E8F0] shadow-xl transition-transform duration-300 z-50 flex flex-col",
+          "fixed right-0 top-0 h-full w-full max-w-[360px] bg-ds-surface border-l border-[#E2E8F0] shadow-xl transition-transform duration-300 z-50 flex flex-col",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       />
@@ -31,7 +31,7 @@ export default function PlotDetailPanel({ plot, isOpen, onClose }: PlotDetailPan
   return (
     <div 
       className={cn(
-        "fixed right-0 top-0 h-full w-[360px] bg-ds-surface border-l border-[#E2E8F0] shadow-xl transition-transform duration-300 z-50 flex flex-col overflow-y-auto",
+        "fixed right-0 top-0 h-full w-full max-w-[360px] bg-ds-surface border-l border-[#E2E8F0] shadow-xl transition-transform duration-300 z-50 flex flex-col overflow-y-auto",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}
     >

@@ -2,10 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Building2, LayoutDashboard, Map, CreditCard, Users, BarChart3, Settings, LogOut } from 'lucide-react'
+import { Building2, LayoutDashboard, Map, CreditCard, Users, BarChart3, Settings, LogOut, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen?: boolean
+  onNavigate?: () => void
+  onClose?: () => void
+}
+
+export default function Sidebar({ isOpen = true, onNavigate, onClose }: SidebarProps) {
   const pathname = usePathname()
 
   const navItems = [
@@ -18,7 +24,12 @@ export default function Sidebar() {
   ]
 
   return (
-    <aside className="w-[260px] h-full flex flex-col bg-ds-primary-dim p-0 shrink-0">
+    <aside
+      className={cn(
+        "w-[260px] max-w-[82vw] h-full flex flex-col bg-ds-primary-dim p-0 shrink-0 transition-transform duration-300 ease-out lg:translate-x-0",
+        isOpen ? "translate-x-0" : "-translate-x-full"
+      )}
+    >
       {/* HEADER SECTION */}
       <div className="p-6">
         <div className="flex items-center gap-2">
@@ -27,6 +38,14 @@ export default function Sidebar() {
             <span className="text-[13px] font-semibold text-white leading-tight">Lyallpur Smart City</span>
             <span className="text-[11px] text-ds-on-primary-container">Management Portal</span>
           </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="ml-auto flex h-8 w-8 items-center justify-center rounded text-ds-on-primary-container transition-colors hover:bg-white/10 hover:text-white lg:hidden"
+            aria-label="Close navigation"
+          >
+            <X className="h-4 w-4" />
+          </button>
         </div>
       </div>
 
@@ -42,6 +61,7 @@ export default function Sidebar() {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={onNavigate}
                 className={cn(
                   "relative flex items-center gap-3 h-[44px] px-3 mx-2 rounded-lg transition-colors",
                   isActive

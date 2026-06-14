@@ -14,13 +14,13 @@ export default function RecentBookingsTable() {
       <div className="p-5 flex justify-between items-center">
         <h2 className="text-[18px] font-semibold text-ds-on-surface">Recent Bookings</h2>
         <button className="text-ds-secondary text-[13px] font-medium hover:text-ds-secondary-dark transition-colors">
-          View All →
+          View All
         </button>
       </div>
 
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className="w-full text-left whitespace-nowrap">
+        <table className="min-w-[780px] w-full text-left whitespace-nowrap">
           <thead className="bg-ds-primary-dim">
             <tr>
               <th className="text-[11px] font-medium uppercase tracking-[0.05em] text-white px-4 py-3">Buyer Name</th>

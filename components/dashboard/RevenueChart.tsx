@@ -33,10 +33,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export default function RevenueChart() {
   return (
-    <div className="bg-ds-surface rounded-lg border border-[#E2E8F0] shadow-card p-5 col-span-2 flex flex-col">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-ds-surface rounded-lg border border-[#E2E8F0] shadow-card p-4 sm:p-5 lg:col-span-2 flex flex-col">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
         <h2 className="text-[18px] font-semibold text-ds-on-surface">Revenue Trend</h2>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4">
           <div className="flex items-center gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-ds-secondary" />
             <span className="text-[12px] font-medium text-ds-on-surface-variant">Bookings</span>

@@ -17,7 +17,7 @@ export default function PlotCell({ plot, isSelected, onClick }: PlotCellProps) {
     <div
       onClick={() => onClick(plot)}
       className={cn(
-        "min-h-[44px] rounded flex items-center justify-center text-[11px] font-semibold transition-all cursor-pointer",
+        "min-h-[40px] sm:min-h-[44px] rounded flex items-center justify-center text-[11px] font-semibold transition-all cursor-pointer",
         isAvailable && "bg-[#dcfce7] text-[#166534] border border-[#86efac] hover:bg-[#bbf7d0] hover:border-[#4ade80] hover:scale-105",
         isBooked && "bg-ds-tertiary-container text-ds-on-tertiary-container border border-[#fbbf24] hover:scale-105",
         isSold && "bg-ds-error-container text-ds-on-error-container border border-[#fca5a5] hover:scale-105",

@@ -23,10 +23,10 @@ export default function PlotMapPage() {
         <div className="flex-1 flex flex-col min-w-0 overflow-y-auto bg-ds-bg">
           
           {/* Top Controls Bar */}
-          <div className="sticky top-0 bg-ds-surface border-b border-[#E2E8F0] px-6 py-3 flex items-center justify-between z-10">
-            <h2 className="text-[20px] font-semibold text-ds-on-surface">Interactive Plot Map</h2>
+          <div className="sticky top-0 bg-ds-surface border-b border-[#E2E8F0] px-4 sm:px-6 py-3 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between z-10">
+            <h2 className="text-[18px] sm:text-[20px] font-semibold text-ds-on-surface">Interactive Plot Map</h2>
             
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               <div className="flex items-center gap-1.5 bg-[#dcfce7] text-[#166534] rounded-full px-3 py-1 text-[12px] font-medium">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#166534]" /> Available
               </div>
@@ -38,11 +38,11 @@ export default function PlotMapPage() {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
               <select 
                 value={selectedBlockId} 
                 onChange={(e) => setSelectedBlockId(e.target.value)}
-                className="h-9 border border-ds-outline-variant rounded px-3 text-[13px] bg-white focus:outline-none focus:border-ds-secondary cursor-pointer"
+                className="h-9 w-full sm:w-auto border border-ds-outline-variant rounded px-3 text-[13px] bg-white focus:outline-none focus:border-ds-secondary cursor-pointer"
               >
                 <option value="all">All Blocks</option>
                 {BLOCKS.map(b => (
@@ -57,7 +57,7 @@ export default function PlotMapPage() {
           </div>
 
           {/* Plot Grids Area */}
-          <div className="p-6 flex flex-col gap-8">
+          <div className="p-4 sm:p-6 flex flex-col gap-6 sm:gap-8">
             {filteredBlocks.map(block => (
               <PlotGrid 
                 key={block.id} 
